@@ -1,1 +1,1 @@
-# Heteria.fr
+# Eteria.fr
