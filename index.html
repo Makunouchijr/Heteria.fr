@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#1a0710">
+<meta name="description" content="Notre petit livre d'amour interactif en 3D — Nos 2 ans ❤️">
+<title>Nos 2 ans ❤️ — Notre livre d'amour</title>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Dégradés partagés (cœur en papier, dorure) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gHeartL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff5360"/>
+      <stop offset=".45" stop-color="#df1e2e"/>
+      <stop offset="1" stop-color="#b30e1c"/>
+    </linearGradient>
+    <linearGradient id="gHeartR" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9101f"/>
+      <stop offset=".55" stop-color="#9a0816"/>
+      <stop offset="1" stop-color="#72040f"/>
+    </linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0a8"/>
+      <stop offset=".3" stop-color="#e6bd57"/>
+      <stop offset=".6" stop-color="#b3842a"/>
+      <stop offset="1" stop-color="#f1d577"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="stage" id="stage">
+  <div class="ambience" aria-hidden="true"></div>
+  <div class="hearts-bg" id="heartsBg" aria-hidden="true"></div>
+
+  <main class="scene" id="scene" aria-label="Livre d'amour interactif">
+    <div class="floor" id="floor"></div>
+    <div class="tilt" id="tilt">
+      <div class="book is-closed" id="book"></div>
+    </div>
+  </main>
+
+  <p class="hint" id="hint">Touche le livre pour l'ouvrir ✨</p>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <nav class="controls" id="controls" aria-label="Commandes du livre">
+    <div class="edit-bar" id="editBar" hidden>
+      <span>✎ Touche un texte pour le modifier — enregistré automatiquement</span>
+      <button type="button" id="btnReset" class="link-btn">Réinitialiser</button>
+    </div>
+    <div class="bar">
+      <button type="button" class="btn" id="btnPrev" aria-label="Page précédente">
+        <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <span class="counter" id="counter">Couverture</span>
+      <button type="button" class="btn" id="btnNext" aria-label="Page suivante">
+        <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <i class="sep"></i>
+      <button type="button" class="btn" id="btnEdit" aria-label="Modifier les textes" aria-pressed="false" title="Modifier les textes">
+        <svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg>
+      </button>
+      <button type="button" class="btn" id="btnSound" aria-label="Son des pages" aria-pressed="true" title="Son des pages">
+        <svg viewBox="0 0 24 24" class="on"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/></svg>
+        <svg viewBox="0 0 24 24" class="off"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6"/></svg>
+      </button>
+      <button type="button" class="btn pill" id="btnToggle" aria-label="Fermer le livre">
+        <svg viewBox="0 0 24 24"><path d="M5 5h6a2 2 0 012 2v12a2 2 0 00-2-2H5V5zM19 5h-6M19 5v12h-6"/></svg>
+        <span id="toggleLabel">Fermer</span>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
